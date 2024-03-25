@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Android_application_Kotlin</string>
     <string name="show_toast">Show Toast</string>
+    <string name="enter_your_message">Enter your message</string>
+    <string name="send_data_to_next_activity">Send Data To Next Activity</string>
 </resources>
