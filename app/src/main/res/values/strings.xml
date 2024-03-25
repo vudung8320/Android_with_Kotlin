@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Android_application_Kotlin</string>
+    <string name="show_toast">Show Toast</string>
 </resources>

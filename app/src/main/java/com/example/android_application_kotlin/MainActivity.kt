@@ -1,6 +1,9 @@
 package com.example.android_application_kotlin
 
 import android.os.Bundle
+import android.util.Log
+import android.widget.Button
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
@@ -15,32 +18,15 @@ import com.example.android_application_kotlin.ui.theme.Android_application_Kotli
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            Android_application_KotlinTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                }
-            }
+        setContentView(R.layout.activity_main)
+
+        val myButton = findViewById<Button>(R.id.btnShowToast)
+        myButton.setOnClickListener() {
+            Log.i("Main Activity", "Button was clicked !")
+
+            Toast.makeText(this, "Button was clicked !", Toast.LENGTH_SHORT).show()
         }
+
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    Android_application_KotlinTheme {
-        Greeting("Android")
-    }
-}
