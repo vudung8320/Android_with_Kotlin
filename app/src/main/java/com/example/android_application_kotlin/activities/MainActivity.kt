@@ -7,9 +7,15 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.ComponentActivity
+import com.example.android_application_kotlin.Constants
 import com.example.android_application_kotlin.R
+import com.example.android_application_kotlin.showToast
 
 class MainActivity : ComponentActivity() {
+    companion object {
+        val TAG: String = MainActivity::class.java.simpleName
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -19,15 +25,15 @@ class MainActivity : ComponentActivity() {
         val sendBtn = findViewById<Button>(R.id.btnSendMsgToNextActivity)
 
         myBtn.setOnClickListener {
-            Log.i("Main Activity", "Button was clicked !")
-            Toast.makeText(this, "Button was clicked !", Toast.LENGTH_SHORT).show()
+            Log.i(TAG, "Button was clicked !")
+            showToast("Button was clicked !")
         }
 
         sendBtn.setOnClickListener {
             val message: String = userMess.text.toString()
             val intent = Intent(this, SecondActivity::class.java)
 
-            intent.putExtra("user_message", message)
+            intent.putExtra(Constants.USER_MSG_KEY, message)
 
             startActivity(intent)
         }

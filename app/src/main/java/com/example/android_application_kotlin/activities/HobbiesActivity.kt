@@ -9,7 +9,9 @@ import com.example.android_application_kotlin.R
 import com.example.android_application_kotlin.models.Supplier
 
 class HobbiesActivity : ComponentActivity() {
-
+    companion object {
+        val TAG: String = HobbiesActivity::class.java.simpleName
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hobbies)
