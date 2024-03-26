@@ -1,10 +1,10 @@
-package com.example.android_application_kotlin
+package com.example.android_application_kotlin.activities
 
 import android.os.Bundle
-import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.ComponentActivity
+import com.example.android_application_kotlin.R
 
 class SecondActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
